@@ -31,11 +31,26 @@ void delay(unsigned int microseconds);
 
 void main(void)
 {
+	init_LCD();
+	my_age.day = 19;
+	my_age.month = 3;
+	my_age.year = 2001;
+	my_age.age = 21;
+
+	char display[50];
 
 	while(1)
 	{
+		for(int counter = 0; counter <= my_age.age; counter++)
+		{
+			sprintf(display, "%d", counter);
+			lcd_putstring(display);
+			delay(200000);
+			lcd_command(CLEAR);
+		}
 
 	}
 }
+
 
 // OTHER FUNCTIONS -----------------------------------------------------------|
